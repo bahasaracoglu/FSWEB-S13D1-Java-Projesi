@@ -13,6 +13,10 @@ public class Main {
         System.out.println(infHasTeen(9, 99, 19,123,23,4));
         System.out.println(infHasTeen(23, 15, 42));
         System.out.println(infHasTeen(22, 23, 34,123));
+        System.out.println("----------isCatPlaying-----------");
+        System.out.println(isCatPlaying(true, 10));
+        System.out.println(isCatPlaying(false, 36));
+        System.out.println(isCatPlaying(false, 35));
 
     }
 
@@ -38,5 +42,9 @@ public class Main {
 
 
 public static boolean isCatPlaying (boolean isSummer, int tempurature)
-{}}
+{
+if (isSummer && (tempurature >= 25 && tempurature <= 45 )) return true;
+if (!isSummer&& (tempurature >= 25 && tempurature <= 35 )) return true;
+else return false;
+}}
 
