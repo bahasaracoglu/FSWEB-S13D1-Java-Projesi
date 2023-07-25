@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("----------shouldWakeUp-----------");
@@ -17,6 +18,26 @@ public class Main {
         System.out.println(isCatPlaying(true, 10));
         System.out.println(isCatPlaying(false, 36));
         System.out.println(isCatPlaying(false, 35));
+        System.out.println("----------area-----------");
+        try{ Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter first value: ");
+            double firstValue = scanner.nextDouble();
+            System.out.println("Enter second value: ");
+            double secondValue = scanner.nextDouble();
+            System.out.println("Area: " + area(firstValue,secondValue));
+        }
+        catch (Exception ex){
+            System.out.println("Invalid value");
+        }
+        System.out.println("----------area-circle----------");
+        try{ Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter radius: ");
+            double radius = scanner.nextDouble();
+            System.out.println("Area: " + area(radius));
+        }
+        catch (Exception ex){
+            System.out.println("Invalid value");
+        }
 
     }
 
@@ -35,16 +56,33 @@ public class Main {
 
         for (int age : ages) {
             if (age >= 13 && age <= 19) {return true;}
-
-
     }  return false;
     }
 
 
-public static boolean isCatPlaying (boolean isSummer, int tempurature)
-{
-if (isSummer && (tempurature >= 25 && tempurature <= 45 )) return true;
-if (!isSummer&& (tempurature >= 25 && tempurature <= 35 )) return true;
-else return false;
-}}
+    public static boolean isCatPlaying (boolean isSummer, int temperature)
+    {
+    if (isSummer && (temperature >= 25 && temperature <= 45 )) return true;
+    if (!isSummer&& (temperature >= 25 && temperature <= 35 )) return true;
+    else return false;
+    }
+    public static double  area (double firstValue, double secondValue) {
+
+        if (firstValue < 0 || secondValue < 0) return -1;
+        return  firstValue*secondValue;
+
+    }
+    public static double  area (double radius) {
+
+        if (radius < 0 ) return -1;
+        return  radius*radius*Math.PI;
+
+    }
+
+
+
+
+
+
+}
 
